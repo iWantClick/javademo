@@ -1,0 +1,17 @@
+<?xml version= "1.0" encoding= "UTF-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.iwc.javademo.hibernate.entity">
+	<class name="User" table="t_user">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<component name="address" class="Address">
+			<property name="country" column="country" type="string" />
+			<property name="detail" column="detail" type="string" />
+		</component>
+	</class>
+</hibernate-mapping>

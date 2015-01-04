@@ -1,0 +1,17 @@
+<?xml version= "1.0" encoding= "UTF-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.iwc.javademo.hibernate.entity">
+	<class name="Group" table="t_group">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<set name="users" table="t_user" lazy="false" cascade="save-update" inverse="false">
+			<key column="gid" />
+			<many-to-many cloumn="uid" class="User" />
+		</set>
+	</class>
+</hibernate-mapping>
